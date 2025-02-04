@@ -4,36 +4,93 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
+// Teste Larissa
 
 
 int main() {
-    char codigo[4];
-    int populacao;
-    float area;
-    float pib;
-    int pontos_turisticos;
 
-    // Cadastrar cidade
-    printf("Digite o código da cidade: ");
-    scanf("%s", codigo);
-    printf("Digite a população da cidade: ");
-    scanf("%d", &populacao);
-    printf("Digite a área da cidade: ");
-    scanf("%f", &area);
-    printf("Digite o PIB da cidade: ");
-    scanf("%f", &pib);
-    printf("Digite o número de pontos turísticos da cidade: ");
+    char nome[50];
+    char codigo[60];
+    int pontos_turisticos;
+    unsigned int habitantes;
+    float area, pib, densidadePopulacional , total;
+
+    printf("---- SUPER TRUNFO ---- \n");
+    printf("Carta 1 \n");
+
+    printf("Cidade: ");
+    scanf("%s", nome); 
+
+    printf("Codigo da carta: ");
+    scanf("%s", codigo); 
+
+    printf("Numeros de pontos turisticos: ");
     scanf("%d", &pontos_turisticos);
 
-    // Exibir dados da cidade
-    printf("\nDados da cidade cadastrada:\n");
-    printf("Código: %s\n", codigo);
-    printf("População: %d\n", populacao);
-    printf("Área: %.2f\n", area);
-    printf("PIB: %.2f\n", pib);
-    printf("Número de Pontos Turísticos: %d\n", pontos_turisticos);
+    printf("Habitantes: ");
+    scanf("%d", &habitantes);
 
-    
+    printf("Qual a area (em km²): ");
+    scanf("%f", &area);
+
+    printf("PIB: ");
+    scanf("%f", &pib);
+
+    // Calcula densidade populacional - pib
+    densidadePopulacional = habitantes / area;
+
+    total = pib / habitantes;
+
+    // Dados a serem exibidos..
+    printf("Cidade: %s\n", nome);
+    printf("Código: %s\n", codigo);
+    printf("Pontos turísticos: %d\n", pontos_turisticos);
+    printf("Habitantes: %d \n", habitantes);
+    printf("Área: %.2f km² \n", area); 
+    printf("PIB: %.2f \n", pib); 
+    printf("Densidade populacional: %f \n", densidadePopulacional);
+    printf("Total: %.1f \n", total);
+
+    char nome_[50];
+    char codigo_[60];
+    int pontos_turisticos_;
+    unsigned int habitantes_;
+    float area_, pib_, densidadePopulacional_ , total_;
+
+    printf("\nCarta 2 \n");
+
+    printf("Cidade: ");
+    scanf("%s", nome_);
+
+    printf("Codigo da carta: ");
+    scanf("%s", codigo_); 
+
+    printf("Numeros de pontos turisticos: ");
+    scanf("%d", &pontos_turisticos_);
+
+    printf("Habitantes: ");
+    scanf("%d", &habitantes_);
+
+    printf("Qual a area (em km²): ");
+    scanf("%f", &area_);
+
+    printf("PIB: ");
+    scanf("%f", &pib_);
+
+    // Calcula densidade populacional - pib
+    densidadePopulacional_ = habitantes_ / area_;
+
+     total_ = pib_ / habitantes_;
+
+    // dados a serem exibidos..
+    printf("Cidade 2: %s\n", nome_);
+    printf("Código: %s\n", codigo_);
+    printf("Pontos turísticos: %d\n", pontos_turisticos_);
+    printf("Habitantes: %d \n", habitantes_);
+    printf("Área: %.2f km² \n", area_); 
+    printf("PIB: %.2f \n", pib_); 
+    printf("Densidade populacional: %f \n", densidadePopulacional_);
+    printf("Total: %.1f \n", total_);
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
