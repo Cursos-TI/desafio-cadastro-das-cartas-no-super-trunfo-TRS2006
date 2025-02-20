@@ -9,7 +9,7 @@
 
 int main() {
 
-    char estado1[30], estado2[30], cod1[5], cod2[5], cidade1[30], cidade2[30];
+    char estado1[5], estado2[5], cod1[5], cod2[5], cidade1[10], cidade2[10];
     int populacao1, populacao2, pontos_turisticos1, pontos_turisticos2;
     float area1, pib1, area2, pib2 , densidade1, densidade2 , pib_per_capita1, pib_per_capita2 , superP1, superP2;
 
@@ -24,15 +24,16 @@ int main() {
 
     printf("Codigo da carta: ");
     scanf(" %s", cod1); 
-   
+    getchar();
 
     printf("Nome da cidade: ");
-    scanf("%30[^\n]", cidade1); 
+    scanf(" %s", cidade1); 
     getchar();
+    
   
     printf("População: ");
-    scanf("%d", &populacao1);
-    getchar();
+    scanf(" %d", &populacao1);
+    
 
     printf("Area (em km²): ");
     scanf("%f", &area1);
