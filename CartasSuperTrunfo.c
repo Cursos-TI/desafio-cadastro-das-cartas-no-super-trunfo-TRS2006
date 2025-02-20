@@ -9,88 +9,119 @@
 
 int main() {
 
-    char nome[50];
-    char codigo[60];
-    int pontos_turisticos;
-    unsigned int habitantes;
-    float area, pib, densidadePopulacional , total;
+    char estado1[30], estado2[30], cod1[5], cod2[5], cidade1[30], cidade2[30];
+    int populacao1, populacao2, pontos_turisticos1, pontos_turisticos2;
+    float area1, pib1, area2, pib2 , densidade1, densidade2 , pib_per_capita1, pib_per_capita2 , superP1, superP2;
+
+    // modo novato e aventureiro
 
     printf("---- SUPER TRUNFO ---- \n");
     printf("Carta 1 \n");
 
-    printf("Cidade: ");
-    scanf("%s", nome); 
+    printf("Estado: ");
+    scanf("%s", estado1);
+    
 
     printf("Codigo da carta: ");
-    scanf("%s", codigo); 
+    scanf(" %s", cod1); 
+   
 
-    printf("Numeros de pontos turisticos: ");
-    scanf("%d", &pontos_turisticos);
+    printf("Nome da cidade: ");
+    scanf("%30[^\n]", cidade1); 
+    getchar();
+  
+    printf("População: ");
+    scanf("%d", &populacao1);
+    getchar();
 
-    printf("Habitantes: ");
-    scanf("%d", &habitantes);
-
-    printf("Qual a area (em km²): ");
-    scanf("%f", &area);
+    printf("Area (em km²): ");
+    scanf("%f", &area1);
 
     printf("PIB: ");
-    scanf("%f", &pib);
+    scanf("%f", &pib1);
+    
+    printf("Numeros de pontos turisticos: ");
+    scanf("%d", &pontos_turisticos1);
 
-    // Calcula densidade populacional - pib
-    densidadePopulacional = habitantes / area;
 
-    total = pib / habitantes;
+    // modo aventureiro - calcular a densidade populacional
+    densidade1 = populacao1 / area1;
+    pib_per_capita1 = pib1 / populacao1;
+
+    printf("\n--------------------------\n");
 
     // Dados a serem exibidos..
-    printf("Cidade: %s\n", nome);
-    printf("Código: %s\n", codigo);
-    printf("Pontos turísticos: %d\n", pontos_turisticos);
-    printf("Habitantes: %d \n", habitantes);
-    printf("Área: %.2f km² \n", area); 
-    printf("PIB: %.2f \n", pib); 
-    printf("Densidade populacional: %f \n", densidadePopulacional);
-    printf("Total: %.1f \n", total);
-
-    char nome_[50];
-    char codigo_[60];
-    int pontos_turisticos_;
-    unsigned int habitantes_;
-    float area_, pib_, densidadePopulacional_ , total_;
-
+    printf("Estado: %s\n", estado1);
+    printf("Cidade: %s\n", cidade1);
+    printf("Código: %s\n", cod1);
+    printf("Pontos turísticos: %d\n", pontos_turisticos1);
+    printf("Habitantes: %d \n", populacao1);
+    printf("Área: %.2f km² \n", area1); 
+    printf("PIB: %.2f bilhões de reais\n", pib1); 
+    printf("Densidade populacional: %.2f hab/km²\n", densidade1);
+    printf("PIB per capita: %.2f reais\n", pib_per_capita1);
+   
+    //  Carta 2
     printf("\nCarta 2 \n");
 
-    printf("Cidade: ");
-    scanf("%s", nome_);
+    printf("Estado: ");
+    scanf("%s", estado2);
+    getchar();
 
     printf("Codigo da carta: ");
-    scanf("%s", codigo_); 
+    scanf(" %s", cod2); 
+    getchar();
 
-    printf("Numeros de pontos turisticos: ");
-    scanf("%d", &pontos_turisticos_);
+    printf("Nome da cidade: ");
+    scanf(" %30[^\n]", cidade2); 
+    getchar();
 
-    printf("Habitantes: ");
-    scanf("%d", &habitantes_);
+    printf("População: ");
+    scanf(" %d", &populacao2);
+    getchar();
 
-    printf("Qual a area (em km²): ");
-    scanf("%f", &area_);
+    printf("Area (em km²): ");
+    scanf("%f", &area2);
 
     printf("PIB: ");
-    scanf("%f", &pib_);
+    scanf("%f", &pib2);
 
-    // Calcula densidade populacional - pib
-    densidadePopulacional_ = habitantes_ / area_;
+    printf("Numeros de pontos turisticos: ");
+    scanf("%d", &pontos_turisticos2);
 
-     total_ = pib_ / habitantes_;
+
+    // modo aventureiro - calcular a densidade populacional
+    densidade2 = populacao2 / area2;
+    pib_per_capita2 = pib2 / populacao2;
+
+    printf("\n--------------------------\n");
 
     // dados a serem exibidos..
-    printf("Cidade 2: %s\n", nome_);
-    printf("Código: %s\n", codigo_);
-    printf("Pontos turísticos: %d\n", pontos_turisticos_);
-    printf("Habitantes: %d \n", habitantes_);
-    printf("Área: %.2f km² \n", area_); 
-    printf("PIB: %.2f \n", pib_); 
-    printf("Densidade populacional: %f \n", densidadePopulacional_);
-    printf("Total: %.1f \n", total_);
+    printf("Estado: %s\n", estado2);
+    printf("Cidade: %s\n", cidade2);
+    printf("Código: %s\n", cod2);
+    printf("Pontos turísticos: %d\n", pontos_turisticos2);
+    printf("Habitantes: %d \n", populacao2);
+    printf("Área: %.2f km² \n", area2); 
+    printf("PIB: %.2f bilhões de reais\n", pib2); 
+    printf("Densidade populacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per capita: %.2f reais\n", pib_per_capita2);
+
+    // Mestre
+    // Somatorio dos atributos
+    superP1 = populacao1 + area1 + pib1 + pontos_turisticos1 + pib_per_capita1 + (1 / densidade1);
+    superP2 = populacao2 + area2 + pib2 + pontos_turisticos2 + pib_per_capita2 + (1 / densidade2);
+
+
+    printf("\nComparação de Cartas:\n");
+
+    printf("População: %s (%d)\n", populacao1 > populacao2? "Carta 1 venceu" : "Carta 2 venceu", populacao1 > populacao2 ? 1 : 0);
+    printf("Área: %s (%d)\n", area1 > area2 ? "Carta 1 venceu" : "Carta 2 venceu", area1 > area2 ? 1 : 0);
+    printf("PIB: %s (%d)\n", pib1 > pib2 ? "Carta 1 venceu" : "Carta 2 venceu", pib1 > pib2 ? 1 : 0);
+    printf("Pontos Turísticos: %s (%d)\n", pontos_turisticos1 > pontos_turisticos2 ? "Carta 1 venceu" : "Carta 2 venceu", pontos_turisticos2 > pontos_turisticos2 ? 1 : 0);
+    printf("Densidade Populacional: %s (%d)\n", densidade1 < densidade2 ? "Carta 1 venceu" : "Carta 2 venceu", densidade1 < densidade2 ? 1 : 0);
+    printf("PIB per Capita: %s (%d)\n", pib_per_capita1 > pib_per_capita2 ? "Carta 1 venceu" : "Carta 2 venceu", pib_per_capita1 > pib_per_capita2 ? 1 : 0);
+    printf("Super Poder: %s (%d)\n", superP1 > superP2 ? "Carta 1 venceu" : "Carta 2 venceu", superP1 > superP2 ? 1 : 0);
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
