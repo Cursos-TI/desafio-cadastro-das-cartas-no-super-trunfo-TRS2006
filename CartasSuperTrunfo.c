@@ -9,7 +9,7 @@
 
 int main() {
 
-    char estado1[5], estado2[5], cod1[5], cod2[5], cidade1[10], cidade2[10];
+    char estado1[5], estado2[5], cod1[5], cod2[5], cidade1[50], cidade2[50];
     int populacao1, populacao2, pontos_turisticos1, pontos_turisticos2;
     float area1, pib1, area2, pib2 , densidade1, densidade2 , pib_per_capita1, pib_per_capita2 , superP1, superP2;
 
@@ -27,7 +27,7 @@ int main() {
     getchar();
 
     printf("Nome da cidade: ");
-    scanf(" %s", cidade1); 
+    scanf(" %30[^\n]", cidade1); 
     getchar();
     
   
@@ -57,10 +57,10 @@ int main() {
     printf("Código: %s\n", cod1);
     printf("Pontos turísticos: %d\n", pontos_turisticos1);
     printf("Habitantes: %d \n", populacao1);
-    printf("Área: %.2f km² \n", area1); 
-    printf("PIB: %.2f bilhões de reais\n", pib1); 
-    printf("Densidade populacional: %.2f hab/km²\n", densidade1);
-    printf("PIB per capita: %.2f reais\n", pib_per_capita1);
+    printf("Área: %.2f km² \n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Densidade populacional: %.1f hab/km²\n", densidade1);
+    printf("PIB per capita: %f reais\n", pib_per_capita1);
    
     //  Carta 2
     printf("\nCarta 2 \n");
@@ -92,7 +92,7 @@ int main() {
 
 
     // modo aventureiro - calcular a densidade populacional
-    densidade2 = populacao2 / area2;
+    densidade2 = populacao2  / area2;
     pib_per_capita2 = pib2 / populacao2;
 
     printf("\n--------------------------\n");
@@ -103,10 +103,10 @@ int main() {
     printf("Código: %s\n", cod2);
     printf("Pontos turísticos: %d\n", pontos_turisticos2);
     printf("Habitantes: %d \n", populacao2);
-    printf("Área: %.2f km² \n", area2); 
-    printf("PIB: %.2f bilhões de reais\n", pib2); 
-    printf("Densidade populacional: %.2f hab/km²\n", densidade2);
-    printf("PIB per capita: %.2f reais\n", pib_per_capita2);
+    printf("Área: %.2f km² \n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Densidade populacional: %.1f hab/km²\n", densidade2);
+    printf("PIB per capita: %f reais\n", pib_per_capita2);
 
     // Mestre
     // Somatorio dos atributos
